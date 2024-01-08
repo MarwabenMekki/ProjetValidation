@@ -1,0 +1,33 @@
+<table class="table">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Speciality</th>
+      <th scope="col">adress</th>
+      <th scope="col">Role</th>
+      <th scope="col">Status</th>
+      <th scope="col">Actions</th>
+
+    </tr>
+    <tr *ngFor="let user of users">
+      <td>{{user._id}}</td>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.telephone}}</td>
+      <td>{{user.speciality}}</td>
+      <td>{{user.adress}}</td>
+      <td>{{user.role}}</td>
+      <td>{{user.status}}</td>
+      <td>
+          <button type="button" class="btn btn-warning" (click)="goToEdit(user._id)">Edit</button>
+          <button type="button" class="btn btn-danger" (click)="delete(user._id)" >Delete</button>
+
+      </td>
+     
+    </tr>
+
+</table>

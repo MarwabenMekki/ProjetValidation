@@ -1,0 +1,29 @@
+<div class="all-title-box">
+    <div class="container text-center">
+        <h1>Affect Students</h1>
+    </div>
+</div>
+
+<div class="form-group" style="margin-top: 50px;">
+    <select name="" id="courseId" class="form-control" (change)="selectCourse($event)">
+      <option value="">Select Course</option>
+      <option *ngFor="let course of courses" [value]="course._id" style="color: black;">
+      {{course.name}}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <select name="" id="studentId" class="form-control" (change)="selectStudent($event)">
+      <option value="">Select Students</option>
+      <option *ngFor="let student of students" [value]="student._id" style="color: black;">
+      {{student.fistName}} {{student.lastName}}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <input type="submit" class="btn btn-info py-3 px-5" style="margin-left: 550px;" value="Affect" (click)="affectStudent()">
+  </div>
+
+  

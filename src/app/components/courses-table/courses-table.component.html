@@ -1,0 +1,22 @@
+<table class="table">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Duration</th>
+    
+      <th scope="col">Actions</th>
+
+    </tr>
+    <tr *ngFor="let course of courses">
+      <td>{{course._id}}</td>
+      <td>{{course.name}}</td>
+      <td>{{course.description}}</td>
+      <td>{{course.duration}}</td>
+      <td>
+          <button type="button" class="btn btn-warning" (click)="goToEdit(course._id)">Edit</button>
+          <button type="button" class="btn btn-danger" (click)="delete(course._id)" >Delete</button>
+      </td>
+    </tr>
+  
+</table>
