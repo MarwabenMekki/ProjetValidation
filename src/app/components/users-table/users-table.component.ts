@@ -23,7 +23,7 @@ export class UsersTableComponent implements OnInit {
     this.router.navigate([`editUser/${id}`]);
 
   }
-  delete(id:number){
+  delete(id:any){
     // send request to delete user by id
     this.userService.deleteUser(id).subscribe(
       (data)=>{
@@ -32,7 +32,6 @@ export class UsersTableComponent implements OnInit {
       if(data.isDeleted){
         this.getAll();
       }
- 
       }
       
     );
@@ -47,5 +46,12 @@ export class UsersTableComponent implements OnInit {
     );
   }
 
+  validate(id:any){
+    this.userService.validate(id).subscribe((response)=>{
+      console.log("here response from BE",response);
+      this.user.status=response.isUpdated;
+      this.router.navigate(["dasboardAdmin"]);
+    })
+  }
 }
 

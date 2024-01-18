@@ -4,7 +4,6 @@
       <th scope="col">Name</th>
       <th scope="col">Description</th>
       <th scope="col">Duration</th>
-    
       <th scope="col">Actions</th>
 
     </tr>
@@ -14,8 +13,10 @@
       <td>{{course.description}}</td>
       <td>{{course.duration}}</td>
       <td>
-          <button type="button" class="btn btn-warning" (click)="goToEdit(course._id)">Edit</button>
-          <button type="button" class="btn btn-danger" (click)="delete(course._id)" >Delete</button>
+        <button *ngIf="isLoggedIn() && user.role=='student'" type="button" class="btn btn-success" (click)="goToDisplay(course._id)">Display</button>
+        <button *ngIf="isLoggedIn() && user.role=='teacher'||user.role=='admin'" type="button" class="btn btn-warning" (click)="goToEdit(course._id)">Edit</button>
+        <button *ngIf="isLoggedIn() && user.role=='teacher'||user.role=='admin'" type="button" class="btn btn-danger" (click)="delete(course._id)">Delete</button>
+
       </td>
     </tr>
   

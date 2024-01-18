@@ -26,6 +26,10 @@
           <button type="button" class="btn btn-warning" (click)="goToEdit(user._id)">Edit</button>
           <button type="button" class="btn btn-danger" (click)="delete(user._id)" >Delete</button>
 
+          <div *ngIf="user.role=='teacher'">
+            <button type="button" class="btn btn-success" (click)="validate(user._id)">Validate Access</button>
+          </div>
+
       </td>
      
     </tr>

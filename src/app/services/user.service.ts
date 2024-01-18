@@ -34,7 +34,7 @@ login(user:any){
   }
 
 getAllUsers(){
-return this.httpClient.get<{users:any}>(this.userUrl)
+return this.httpClient.get<{users:any}>(this.userUrl);
 }
 
 getUserById(id:any){
@@ -42,7 +42,7 @@ getUserById(id:any){
 }
 
 deleteUser(id:any){
-return this.httpClient.delete<{isDeleted:boolean}>(`${this.userUrl}/${id}`)
+return this.httpClient.delete<{isDeleted:boolean}>(`${this.userUrl}/${id}`);
 }
 
 editUser(user:any){
@@ -53,4 +53,19 @@ affect(obj:any){
   return this.httpClient.post<{msg:string}>(this.userUrl +"/affectation",obj);
 }
 
+validate(id:any){
+return this.httpClient.get<{isUpdated:boolean}>(`${this.userUrl+"/validation"}/${id}`);
+}
+
+getAllTeachers(){
+  return this.httpClient.get<{users:any}>(this.userUrl+"/teachers");
+  }
+
+searchTeachersBySpecialty(speciality: any){
+    return this.httpClient.get<{teachers:any}>(`${this.userUrl+"/searchTeacher"}/${speciality}`);
+  }
+
+  searchChildByTel(user:any){
+    return this.httpClient.post<{student:any}>(this.userUrl+"/searchChildByTel",user);
+  }
 }

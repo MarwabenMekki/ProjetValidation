@@ -1,0 +1,11 @@
+<div class="all-title-box">
+    <div class="container text-center">
+        <h1>Teachers</h1>
+    </div>
+</div>
+
+<div class="row">
+<div *ngFor="let teacher of teachers" style="margin-top: 100px;">
+    <app-teacher [teacherInput]="teacher"></app-teacher>
+    </div>
+</div>

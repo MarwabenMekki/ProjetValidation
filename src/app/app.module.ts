@@ -25,6 +25,18 @@ import { AddCourseComponent } from './components/add-course/add-course.component
 import { EditCourseComponent } from './components/edit-course/edit-course.component';
 import { AffectStudentsComponent } from './components/affect-students/affect-students.component';
 import { NoteEvaluationComponent } from './components/note-evaluation/note-evaluation.component';
+import { AddNoteComponent } from './components/add-note/add-note.component';
+import { NotesTableComponent } from './components/notes-table/notes-table.component';
+import { TeachersComponent } from './components/teachers/teachers.component';
+import { CoursesComponent } from './components/courses/courses.component';
+import { TeacherComponent } from './components/teacher/teacher.component';
+import { UniversityComponent } from './components/university/university.component';
+import { SearchTeacherComponent } from './components/search-teacher/search-teacher.component';
+import { CourseComponent } from './components/course/course.component';
+import { EditNoteComponent } from './components/edit-note/edit-note.component';
+import { NoteInfoComponent } from './components/note-info/note-info.component';
+import { SearchForParentComponent } from './components/search-for-parent/search-for-parent.component';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +60,19 @@ import { NoteEvaluationComponent } from './components/note-evaluation/note-evalu
     AddCourseComponent,
     EditCourseComponent,
     AffectStudentsComponent,
-    NoteEvaluationComponent
+    NoteEvaluationComponent,
+    AddNoteComponent,
+    NotesTableComponent,
+    TeachersComponent,
+    CoursesComponent,
+    TeacherComponent,
+    UniversityComponent,
+    SearchTeacherComponent,
+    CourseComponent,
+    EditNoteComponent,
+    NoteInfoComponent,
+    SearchForParentComponent,
+ 
   ],
   imports: [
     BrowserModule,

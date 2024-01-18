@@ -1,0 +1,22 @@
+<div class="all-title-box">
+  <div class="container text-center">
+      <h1>My Notes</h1>
+  </div>
+</div>
+
+<table class="table">
+  <tr>
+    <th scope="col">course</th>
+    <th scope="col">Teacher</th>
+    <th scope="col">Note</th>
+    <th scope="col">evaluation</th>
+  </tr>
+
+  <tr>
+    <td>{{ note.course.name }}</td>
+    <td>{{ note.course.teacher.firstName }} {{ note.course.teacher.lastName }}</td>
+    <td>{{note.evaluation}}</td>
+    <td>{{ note.value}}</td>
+  </tr>
+
+</table>

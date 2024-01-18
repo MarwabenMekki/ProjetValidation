@@ -17,8 +17,21 @@
           <div class="form-group">
             <input type="number" class="form-control" [(ngModel)]="course.duration" name="c" placeholder="Duration">
           </div>
+
+          <div class="form-group" style="visibility: hidden;">
+            <input type="file" class="form-control" name="img" #imagePicker (change)="onImageSelected($event)"/>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-secondary" (click)="imagePicker.click()">
+              Select an Avatar
+            </button>
+            <div class="text-center mt-3">
+              <img [src]="imagePreview" alt="" width="200px">
+            </div>
+        </div>
+
           <div class="form-group">
-            <input type="submit" class="btn btn-primary py-3 px-5" style="margin-left: 480px;" value="Add Course">
+            <input type="submit" class="btn btn-primary py-3 px-5" style="margin-left: 460px;" value="Add Course">
           </div>
         </form>  
       </div>

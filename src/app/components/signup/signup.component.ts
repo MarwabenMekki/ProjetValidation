@@ -9,12 +9,14 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+
   signupForm!:FormGroup;
   test = true;
   path: string = "";
   imagePreview: any;
   filePreview: any;
   errorMsg:string="";
+
   constructor(
     private formBuilder:FormBuilder,
     private router:Router,
@@ -36,23 +38,23 @@ export class SignupComponent implements OnInit {
       password: ["", [Validators.required, Validators.minLength(5), Validators.maxLength(8)]],
       confirmPassword: ["", [Validators.required]],
       file:[""],
-      img: [""],
+      img: [""]
     });
+
     this.addControlsBasedOnPath();
   }
 
   private addControlsBasedOnPath(): void {
-
-    if (this.path === "/student") {
-      this.signupForm.addControl('img', new FormControl(""));
-    } else if (this.path === "/parent") {
-      this.signupForm.addControl('childPhone', new FormControl("", [Validators.required, Validators.minLength(8),Validators.maxLength(8)]));
+if ((this.path === "/parent") ) {
+  this.signupForm.addControl('childPhone', new FormControl("", [Validators.required, Validators.minLength(8),Validators.maxLength(8)]));
+} else if (this.path === "/teacher") {
+  this.signupForm.addControl('speciality', new FormControl("", [Validators.required]));
+  this.signupForm.addControl('file', new FormControl(""));
+}  
+}
+    // if (this.path === "/student") {
+    //   // this.signupForm.addControl('img', new FormControl(""));
  
-    } else if (this.path === "/teacher") {
-      this.signupForm.addControl('speciality', new FormControl("", [Validators.required]));
-      this.signupForm.addControl('file', new FormControl(""));
-   }  
-  }
 
   matchPwd() {
     let pwd = this.signupForm.value.password;
@@ -86,9 +88,7 @@ export class SignupComponent implements OnInit {
       this.imagePreview = reader.result as string
 
     };
-
     reader.readAsDataURL(file);
-
   }
 
 signup() {
@@ -106,15 +106,14 @@ signup() {
 
     }else{
       this.signupForm.value.role = "parent";
-
     }
 
     this.userService.signup(this.signupForm.value, this.signupForm.value.img, this.signupForm.value.file).subscribe(
       (response) => {
         console.log("here response after signup", response.msg);
         this.errorMsg=response.msg;
-      }
-    );
+      });
+      this.router.navigate(["login"]);
   }
 
   onFileSelected(event: Event) {
@@ -134,7 +133,7 @@ signup() {
       this.filePreview = reader.result as string
 
     };
-
+    
     reader.readAsDataURL(file);
 
   }

@@ -6,6 +6,7 @@ const courseSchema = mongoose.Schema({
     name:String,
     description:String,
     duration: Number,
+    img: String,
 
     teacher: {
         type: mongoose.Schema.Types.ObjectId,

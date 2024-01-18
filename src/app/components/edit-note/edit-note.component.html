@@ -1,0 +1,25 @@
+<div class="all-title-box">
+    <div class="container text-center">
+        <h1>Edit Note</h1>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 50px;">
+    <div class="row">
+      <div class="col-lg-12">
+        <form #editNoteForm="ngForm" (ngSubmit)="editNote()">
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="note.value" name="a"  placeholder="Value">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control"[(ngModel)]="note.evaluation" name="b" placeholder="Evaluation">
+          </div>
+          
+          <div class="form-group">
+            <input type="submit" class="btn btn-primary py-3 px-5" style="margin-left: 480px;" value="Edit Note">
+          </div>
+        </form>  
+        <span style="color: red;">{{errorMsg}}</span>
+      </div>
+
+

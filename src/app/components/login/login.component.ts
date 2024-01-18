@@ -14,7 +14,6 @@ export class LoginComponent implements OnInit {
   
   user:any={};
   loginForm!:FormGroup;
-  loginType:any;
   errorMsg:string="";
 
   constructor(
@@ -24,11 +23,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   login(){
-    if (this.loginType == 'email') {
-      console.log("connexion with email",this.user.email);
-    } else {
-      console.log("connexion with tel",this.user.telephone);
-    }
     console.log("here login",this.user);
     this.userService.login(this.user).subscribe(
       (data)=>{
@@ -39,8 +33,6 @@ export class LoginComponent implements OnInit {
           let user:any = this.decodeToken(data.token);
           console.log("here user",user);
           console.log("here token",data.token);
-          console.log('user.role:', user.role);
-          console.log('user.status:', user.status);
 
           if (user.role=='teacher') {
 

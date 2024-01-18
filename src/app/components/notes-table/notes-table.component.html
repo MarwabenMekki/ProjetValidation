@@ -1,0 +1,25 @@
+<table class="table">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">value</th>
+      <th scope="col">evaluation</th>
+      <th scope="col">student</th>
+      <th scope="col">course</th>
+      <th scope="col">Actions</th>
+
+    </tr>
+    <tr *ngFor="let note of notes">
+      <td>{{note._id}}</td>
+      <td>{{note.value}}</td>
+      <td>{{note.evaluation}}</td>
+      <td>{{note.student}}</td>
+      <td>{{note.course}}</td>
+      <td>
+          <button type="button" class="btn btn-warning" (click)="goToEdit(note._id)">Edit</button>
+          <button type="button" class="btn btn-danger" (click)="delete(note._id)" >Delete</button>
+
+      </td>
+    </tr>
+  
+</table>
+

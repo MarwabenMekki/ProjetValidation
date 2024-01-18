@@ -10,6 +10,14 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { AddCourseComponent } from './components/add-course/add-course.component';
 import { EditCourseComponent } from './components/edit-course/edit-course.component';
 import { AffectStudentsComponent } from './components/affect-students/affect-students.component';
+import { AddNoteComponent } from './components/add-note/add-note.component';
+import { TeachersComponent } from './components/teachers/teachers.component';
+import { CoursesComponent } from './components/courses/courses.component';
+import { UniversityComponent } from './components/university/university.component';
+import { SearchTeacherComponent } from './components/search-teacher/search-teacher.component';
+import { EditNoteComponent } from './components/edit-note/edit-note.component';
+import { NoteInfoComponent } from './components/note-info/note-info.component';
+import { SearchForParentComponent } from './components/search-for-parent/search-for-parent.component';
 
 const routes: Routes = [
   
@@ -26,6 +34,14 @@ const routes: Routes = [
 {path:"editCourse/:id",component:EditCourseComponent},
 {path:"addCourse",component:AddCourseComponent},
 {path:"affectStudents",component:AffectStudentsComponent},
+{path:"addNote",component:AddNoteComponent},
+{path:"teachers",component:TeachersComponent},
+{path:"courses",component:CoursesComponent},
+{path:"universities",component:UniversityComponent},
+{path:"searchTeacher",component:SearchTeacherComponent},
+{path:"editNote/:id",component:EditNoteComponent},
+{path:"noteInfo/:user",component:NoteInfoComponent},
+{path:"searchForParent",component:SearchForParentComponent}
 ];
 
 @NgModule({

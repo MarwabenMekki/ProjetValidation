@@ -1,11 +1,21 @@
 // import mongoose module
-const { stripExtension } = require("@angular/compiler-cli/src/ngtsc/file_system/src/util");
 const mongoose = require("mongoose");
 
 // create user schema
 const noteSchema = mongoose.Schema({
     value:String,
     evaluation: String,
+
+    student: 
+        {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+        },
+
+    course: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Course"
+        },
     
 });
 // create user model
