@@ -157,7 +157,7 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                               <a class="dropdown-item" routerLink="universities">Search University</a>
                               <a class="dropdown-item" routerLink="searchTeacher" >Search Teacher</a>
-                              <a class="dropdown-item" routerLink="searchForParent" >Search Parent</a>
+                              <a *ngIf="isLoggedIn() && user.role== 'parent' " class="dropdown-item" routerLink="searchForParent" >Search Parent</a>
                             </div>
                           </div>
 
